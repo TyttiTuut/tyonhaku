@@ -1,0 +1,76 @@
+
+h1, h2 {
+    font-weight: bold; 
+    color: #05445E; 
+    background-color: #D4F1F4; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+h1 {
+    font-size: 24px; 
+}
+
+h2 {
+    font-size: 16px; 
+}
+
+
+#tarkkahaku {
+    border-radius: 10px; 
+    background-color: #D4F1F4; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+#sanahaku {
+    border-radius: 10px; 
+    background-color: #75E6DA; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+#alakohtainen {
+    border-radius: 10px; 
+    background-color: #D4F1F4; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+#laajahaku {
+    border-radius: 10px; 
+    background-color: #75E6DA; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+
+[type="button"] {
+    background-color: #189AB4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  [type="button"]:hover {
+    background-color: #05445E;
+  }
+
+  input[type="text"] {
+    background-color: #D4F1F4;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  
