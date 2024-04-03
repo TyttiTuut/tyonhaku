@@ -11,6 +11,7 @@ const div_valintatyot2 = document.getElementById('Valintatyot2');
 const div_kemia = document.getElementById('Kemiatyot');
 const div_Ittyot = document.getElementById('ITtyot');
 const div_Ittyot2 = document.getElementById('ITtyot2');
+const div_etatyot = document.getElementById('EtatyotDiv')
 
 
 // Lisätään tapahtumankäsittelijä kemisti-nappulan klikkaukselle
@@ -119,6 +120,14 @@ const haeHarjoittelija = (url,div) => {
             console.error('Fetch error:', error);
         });
 }
+
+// Lisätään tapahtumankäsittelijä etätyöt-nappulan klikkaukselle
+document.getElementById('Etatyot').addEventListener('click', function () {
+    console.log('Button Etätyöt clicked'); // Tulostetaan konsoliin 'Button Etätyöt clicked'
+    // Kutsutaan haeHarjoittelija-funktiota annetulla URL:llä
+    haeJaNaytaTyot('https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?valitutAmmattialat=25&valitutAmmattialat=35&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=true', div_etatyot);
+});
+
 
 // Haetaan viittaus hakukenttään
 const hakukentta = document.getElementById('textfield');
@@ -254,4 +263,5 @@ document.getElementById('tyhjennäkaikki').addEventListener('click', function ()
     div_Ittyot.innerHTML = ''
     div_Ittyot2.innerHTML = ''
     div_kemia.innerHTML = ''
+    div_etatyot.innerHTML = ''
 });
