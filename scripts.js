@@ -128,9 +128,27 @@ document.getElementById('Etatyot').addEventListener('click', function () {
     haeJaNaytaTyot('https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?valitutAmmattialat=25&valitutAmmattialat=35&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=true', div_etatyot);
 });
 
+// Lisätään tapahtumankäsittelijä syöttökentälle, joka kuuntelee syötteen muutoksia
+document.getElementById("textfield").addEventListener("input", validateInput);
+
+function validateInput() {
+    var inputField = document.getElementById("textfield");
+    var errorMessage = document.getElementById("error-message");
+    var inputValue = inputField.value.trim(); // Poistetaan ylimääräiset välilyönnit
+
+    if (inputValue.length < 3) {
+        // Näytetään virheilmoitus ja korostetaan kenttä punaisella reunuksella
+        errorMessage.style.display = "block";
+        inputField.style.borderColor = "red";
+    } else {
+        // Piilotetaan virheilmoitus ja poistetaan mahdollinen korostus
+        errorMessage.style.display = "none";
+        inputField.style.borderColor = ""; // Palautetaan alkuperäinen reunusväri
+    }
+}
 
 // Haetaan viittaus hakukenttään
-const hakukentta = document.getElementById('textfield');
+const hakukentta = document.getElementById("textfield");
 
 // Lisätään tapahtumankäsittelijä enter-näppäimen painallukselle hakukenttään
 hakukentta.addEventListener("keydown", function (event) {
