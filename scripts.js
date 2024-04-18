@@ -151,7 +151,7 @@ function validateInput() {
 const hakukentta = document.getElementById("textfield");
 
 // Lisätään tapahtumankäsittelijä enter-näppäimen painallukselle hakukenttään
-document.getElementById("textfield").addEventListener("keydown", function (event) {
+document.getElementById("textfield").addEventListener("keyup", function (event) {
     // Tarkistetaan, onko painallus enter-näppäin
     if (event.key === "Enter") {
         var hakukentta = document.getElementById("textfield");
