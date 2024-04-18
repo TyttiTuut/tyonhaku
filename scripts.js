@@ -133,7 +133,7 @@ document.getElementById('Etatyot').addEventListener('click', function () {
 const hakukentta = document.getElementById('textfield');
 
 // Lisätään tapahtumankäsittelijä enter-näppäimen painallukselle hakukenttään
-hakukentta.addEventListener('keypress', function (event) {
+hakukentta.addEventListener('keydown', function (event) {
     // Tarkistetaan, onko painallus enter-näppäin
     if (event.key === 'Enter') {
         // Haetaan syötetty sana hakukentästä
