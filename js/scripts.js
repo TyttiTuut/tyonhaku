@@ -147,33 +147,31 @@ function validateInput() {
     }
 }
 
-// Haetaan viittaus hakukenttään
-const hakukentta = document.getElementById("textfield");
 
 // Lisätään tapahtumankäsittelijä enter-näppäimen painallukselle hakukenttään
 document.getElementById("textfield").addEventListener("keydown", function (event) {
     // Tarkistetaan, onko painallus enter-näppäin
     if (event.key === "Enter") {
-        const hakukentta = document.getElementById("textfield");
+        var hakukentta = document.getElementById("textfield");
         // Haetaan syötetty sana hakukentästä
-        const hakusana = hakukentta.value.trim();
+        var hakusana = hakukentta.value.trim();
         // Tarkistetaan, ettei hakukenttä ole tyhjä
-        if (hakusana !== '') {
+        if (hakusana !== "") {
             // Muodostetaan URL hakusanan perusteella
-            const url = `https://duunitori.fi/api/v1/jobentries?search=${encodeURIComponent(hakusana)}`;
+            var url = `https://duunitori.fi/api/v1/jobentries?search=${encodeURIComponent(hakusana)}`;
             // Tyhjennetään hakutulokset div-elementistä
             div_hakutyot.innerHTML = '';
             // Kutsutaan haeJaNaytaTyot-funktiota annetulla URL:llä ja div-elementillä
             haeJaNaytaTyot(url, div_hakutyot);
             // Muodostetaan URL hakusanan perusteella
-            const url2 = `https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?hakusana=${encodeURIComponent(hakusana)}&hakusanakentta=sanahaku&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---`;
+            var url2 = `https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?hakusana=${encodeURIComponent(hakusana)}&hakusanakentta=sanahaku&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---`;
             // Tyhjennetään hakutulokset div-elementistä
             div_hakutyot2.innerHTML = '';
             // Kutsutaan haeJaNaytaTyot-funktiota annetulla URL:llä ja div-elementillä
             haeJaNaytaTyot(url2, div_hakutyot2);
         }
         // Tyhjennetään syöttökenttä
-        hakukentta.value = '';
+        hakukentta.value = "";
     }
 });
 
